@@ -12,6 +12,7 @@ jobs:
         with:
           node-version: "18"
       - run: npm install -g yarn
+      - run: npm install -g prettier
       - run: yarn
       - run: yarn lint
       - run: yarn prettier --check "**/*.{ts,tsx}"
