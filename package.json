@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettify": "prettier --write \"**/*.{ts,tsx}\"",
+    "lint-fix": "next lint --fix",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
