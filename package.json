@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prettify": "prettier --write \"**/*.{ts,tsx}\"",
+    "prettify:check": "prettier --check \"**/*.{ts,tsx}\"",
     "lint-fix": "next lint --fix",
     "typecheck": "tsc"
   },

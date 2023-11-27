@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import {
   Card,
   CardContent,
@@ -18,7 +18,7 @@ interface BlogPostProps {
   };
 }
 
-const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
+const BlogPost: FC<BlogPostProps> = ({ post }) => {
   return (
     <Card
       sx={{
