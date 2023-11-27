@@ -12,6 +12,7 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useRouter } from "next/router";
 
 function Copyright(props: any) {
   return (
@@ -23,7 +24,7 @@ function Copyright(props: any) {
     >
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        HelpMosaic
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -31,21 +32,32 @@ function Copyright(props: any) {
   );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
+const customTheme = createTheme({
+  palette: {
+    primary: {
+      main: "#004D40",
+    },
+    secondary: {
+      main: "#FF8C00",
+    },
+  },
+});
 
 export default function SignInSide() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const router = useRouter();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get("email"),
       password: data.get("password"),
     });
+    router.push("/dashboard");
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={customTheme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
         <CssBaseline />
         <Grid
@@ -54,13 +66,10 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage:
-              "url(https://source.unsplash.com/random?wallpapers)",
+            backgroundImage: "url(/volunteerlogin.jpg)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
-              t.palette.mode === "light"
-                ? t.palette.grey[50]
-                : t.palette.grey[900],
+              t.palette.mode === "light" ? "#f0f0f0" : "#333333",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -88,15 +97,18 @@ export default function SignInSide() {
               sx={{ mt: 1 }}
             >
               <TextField
-                margin="normal"
                 required
                 fullWidth
                 id="email"
                 label="Email Address"
                 name="email"
-                autoComplete="email"
-                autoFocus
+                sx={{
+                  "& input": {
+                    background: "transparent",
+                  },
+                }}
               />
+
               <TextField
                 margin="normal"
                 required
@@ -126,7 +138,11 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link
+                    href="#"
+                    variant="body2"
+                    onClick={() => router.push("/signup")}
+                  >
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
