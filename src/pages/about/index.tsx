@@ -143,12 +143,12 @@ const AboutUsPage = () => {
               together to make a positive impact. Our mission is to connect
               passionate individuals with meaningful opportunities, fostering a
               culture of giving and collaboration. At HelpMosaic, we believe
-              that everyone has the power to make a difference. Whether you're
+              that everyone has the power to make a difference. Whether you are
               passionate about education, environmental sustainability, or
               community development, we provide a platform to channel your
               energy into impactful actions. Join us in making a difference and
               building a better world together. Together, we can create a global
-              community where everyone's efforts, regardless of scale,
+              community where everyone&apos;s efforts, regardless of scale,
               contribute to positive and lasting impact.
             </Typography>
           </StyledPaper>

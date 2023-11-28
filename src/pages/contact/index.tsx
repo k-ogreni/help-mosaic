@@ -17,7 +17,7 @@ const contactUsTheme = createTheme({
       main: "#FF8C00",
     },
     text: {
-      primary: "#FFFFFF", // Set the default text color
+      primary: "#FFFFFF",
     },
   },
 });
@@ -39,12 +39,8 @@ const ContactUsPage = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // You can add your logic for form submission here
-
-    // For demonstration purposes, show an alert with the form data
     alert(`Form submitted!\n${JSON.stringify(formData, null, 2)}`);
 
-    // Reset the form fields after submission
     setFormData({
       name: "",
       email: "",

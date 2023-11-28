@@ -53,7 +53,7 @@ const expandablePosts = [
 ];
 
 expandablePosts.sort(
-  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
 
 const blogPosts = [
@@ -118,13 +118,13 @@ const Blog = () => {
             variant="h2"
             sx={{ color: "#3CB371", marginBottom: "20px" }}
           >
-            HelpMosaic's Blog
+            HelpMosaic&apos;s Blog
           </Typography>
           <Container
             sx={{
               marginTop: 5,
               marginBottom: 5,
-              maxWidth: "800px", // Set the desired fixed width
+              maxWidth: "800px",
             }}
           >
             <Typography
@@ -149,7 +149,7 @@ const Blog = () => {
           </Typography>
           <Container
             sx={{
-              maxWidth: "800px", // Set the desired fixed width
+              maxWidth: "800px",
             }}
           >
             <Grid container spacing={3}>
