@@ -6,6 +6,7 @@
 First, run the development server if you want to run the app locally:
 
 ```bash
+npm i
 npm run dev
 ```
 
